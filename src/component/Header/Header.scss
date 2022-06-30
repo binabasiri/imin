@@ -1,2 +1,51 @@
 .header {
+  margin: 0;
+  background-color: azure;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+  }
+  &__logo-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__logo {
+    height: 1.5rem;
+    margin-left: 1rem;
+  }
+  &__tabs {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &__tab {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+    border-radius: 1rem;
+    &:hover {
+      background-color: #005d7a;
+      color: azure;
+      height: 100%;
+    }
+  }
+  &__link {
+    text-decoration: none;
+    color: #00c2ff;
+    margin: 0 1rem;
+    text-transform: capitalize;
+    height: 45%;
+  }
 }

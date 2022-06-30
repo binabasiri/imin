@@ -1,12 +1,16 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.scss';
 import Header from './component/Header/Header';
+import MyTrips from './pages/MyTrips/MyTrips';
+
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <Header />
-      </div>
+      <Header />
+      <Switch>
+        <Route path="/" exact></Route>
+        <Route path="/mytrips" component={MyTrips}></Route>
+      </Switch>
     </BrowserRouter>
   );
 }
