@@ -1,0 +1,115 @@
+// .side-bar {
+//   //   color: rgb(0, 255, 187);
+//   z-index: 1;
+//   color: #467599;
+//   width: 25vw;
+
+//   background-color: #91eae4;
+//   min-height: calc(100vh - 1rem);
+
+//   &__form {
+//     display: flex;
+//     flex-direction: column;
+//     background-color: #91eae4;
+//     align-items: center;
+//   }
+//   &__label {
+//     text-transform: capitalize;
+//     margin-left: 2rem;
+//   }
+//   &__date {
+//     border: solid #005d7a 0.083rem;
+//     height: 2rem;
+//     width: 90%;
+//     border-radius: 0.3rem;
+//     color: #467599;
+//     background-color: rgb(255, 254, 240);
+//     text-align: center;
+//     margin-bottom: 1rem;
+//     margin-inline: auto;
+//   }
+//   &__input {
+//     border: solid #005d7a 0.083rem;
+//     height: 2rem;
+//     border-radius: 0.3rem;
+//     background-color: rgb(255, 254, 240);
+//     width: 90%;
+
+//     text-align: center;
+//     margin-bottom: 1rem;
+//   }
+//   &__activity-container {
+//     display: flex;
+//     flex-direction: column;
+//     border: 0.083rem solid #005d7a;
+//     border-radius: 1rem;
+//     padding: 1rem;
+//     width: fit-content;
+//     background-color: rgba(255, 255, 0, 0.84);
+//     margin-bottom: 1rem;
+//   }
+//   &__activity {
+//     border: solid #005d7a 0.083rem;
+//     height: 4rem;
+//     width: 90%;
+//     resize: none;
+//     border-radius: 0.3rem;
+//     background-color: #9ed8db;
+//     margin-bottom: 1rem;
+//   }
+// }
+
+// .button {
+//   width: 5rem;
+//   height: 3rem;
+//   border-radius: 50%;
+//   text-align: center;
+//   text-transform: uppercase;
+//   transition: 0.5s;
+//   background-size: 200% auto;
+//   color: #ffffff;
+//   border-radius: 10px;
+//   display: block;
+//   border: 0px;
+//   font-weight: 700;
+
+//   cursor: pointer;
+//   user-select: none;
+//   -webkit-user-select: none;
+//   touch-action: manipulation;
+//   &:hover {
+//     background-position: right center;
+//     /* change the direction of the change here */
+//     color: #fff;
+//     text-decoration: none;
+//   }
+//   &__container {
+//     display: flex;
+//     margin-bottom: 2rem;
+//   }
+//   &:active {
+//     transform: scale(0.95);
+//   }
+//   &__add {
+//     box-shadow: 0px 0px 14px -7px #f09819;
+//     background-image: linear-gradient(
+//       45deg,
+//       #49a078 0%,
+//       #5bcda3e1 51%,
+//       #49a078 100%
+//     );
+//   }
+//   &__remove {
+//     box-shadow: 0px 0px 14px -7px #f09819;
+//     background-image: linear-gradient(
+//       45deg,
+//       #db5461 0%,
+//       #ff6070 51%,
+//       #db5461 100%
+//     );
+//     margin-left: 3rem;
+//   }
+//   &__submit {
+//     background-color: #005d7a;
+//   }
+// }

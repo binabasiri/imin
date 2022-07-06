@@ -10,12 +10,11 @@ function Header() {
           <img alt="Logo Icon" className="header__logo" src={logo} />
         </Link>
         <div className="header__tabs">
-          <Link to="/" className="header__link">
-            <div className="header__tab">my trips</div>
+          <Link to="/newtrip" className="header__link">
+            <div className="header__tab">new trip</div>
           </Link>
-
-          <Link to="/" className="header__link">
-            <div className="header__tab">UserName</div>
+          <Link to="/mytrips" className="header__link">
+            <div className="header__tab">my trips</div>
           </Link>
         </div>
       </nav>

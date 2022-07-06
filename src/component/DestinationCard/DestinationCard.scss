@@ -1,0 +1,32 @@
+.card__selection {
+  height: 5rem;
+  background-color: red;
+}
+.card__select-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+}
+.destination-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.1);
+  background: #ece9e6;
+  background: linear-gradient(to right, #ffffff, #ece9e6);
+  width: 30%;
+  margin: 1rem;
+}
+.destination__rating {
+  margin-left: 0.7rem;
+}
+
+.card {
+  &__container {
+    width: 100%;
+    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
