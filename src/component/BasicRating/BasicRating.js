@@ -11,7 +11,7 @@ function BasicRating({ value, number }) {
       }}
     >
       <Typography component="legend">
-        {value}({number})
+        {value} ({number} votes)
       </Typography>
       <Rating name="read-only" value={value} precision={0.1} readOnly />
     </Box>

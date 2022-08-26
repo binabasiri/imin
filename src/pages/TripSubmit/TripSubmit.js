@@ -4,7 +4,7 @@ import './TripSubmit.scss';
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function TripSubmit(props) {
+function TripSubmit({ props, user }) {
   const history = useHistory();
   const cityInformation = { ...props.location.state };
   const findWidestPhoto = (cityInformation) => {
@@ -16,15 +16,20 @@ function TripSubmit(props) {
   const selectedRestaurants = cityInformation.restaurants.filter(
     (restaurant) => restaurant.isSelected
   );
-  // console.log(cityInformation);
+
   const selectedTouristAttractions = cityInformation.touristAttractions.filter(
     (touristAttractions) => touristAttractions.isSelected
   );
+  const token = sessionStorage.getItem('authToken');
 
   const submitTheTrip = () => {
-    axios.post('http://localhost:8080/trips', userData).then((response) => {
-      history.push('/mytrips');
-    });
+    axios
+      .post('http://localhost:8080/trips', userData, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        history.push('/mytrips');
+      });
   };
 
   const cancelTheTrip = () => {
@@ -37,7 +42,6 @@ function TripSubmit(props) {
     const newUserData = { ...userData };
     // const name = event.target.name;
     newUserData.start = event.target.value;
-    console.log(event.target.value);
     setUserData({ ...newUserData });
   };
   const onEndDateChange = (event) => {
@@ -59,46 +63,51 @@ function TripSubmit(props) {
   return (
     <div className="submit-trip">
       <div className="submit-trip__wrapper">
-        <h1>{cityInformation.cityName}</h1>
-        <label className="side-bar__label">from:</label>
-        <input
-          onChange={onStartDateChange}
-          className="side-bar__date"
-          type="date"
-          id="start"
-          name="start"
-          min="2022-01-01"
-          max="2023-12-31"
-        ></input>
-        <label className="side-bar__label">To:</label>
+        <h1 className="destination__title">{cityInformation.cityName}</h1>
+        <div className="submit-trip__date-container">
+          <label className="submit-trip__label">From:</label>
+          <input
+            onChange={onStartDateChange}
+            className="submit-trip__date"
+            type="date"
+            id="start"
+            name="start"
+            min="2022-01-01"
+            max="2023-12-31"
+          ></input>
+          <label className="submit-trip__label">To:</label>
 
-        <input
-          onChange={onEndDateChange}
-          className="side-bar__date"
-          type="date"
-          id="end"
-          name="end"
-          min="2022-01-01"
-          max="2023-12-31"
-        ></input>
-
+          <input
+            onChange={onEndDateChange}
+            className="submit-trip__date"
+            type="date"
+            id="end"
+            name="end"
+            min="2022-01-01"
+            max="2023-12-31"
+          ></input>
+        </div>
         <div className="submit-trip__restaurants">
-          <h2>selected restaurants</h2>
-          {selectedRestaurants &&
-            selectedRestaurants.map((selectedRestaurants) => {
-              return <h3>{selectedRestaurants.name}</h3>;
-            })}
+          <h2 className="place__title">selected restaurants</h2>
+          <ul>
+            {selectedRestaurants &&
+              selectedRestaurants.map((selectedRestaurants) => {
+                return <li>{selectedRestaurants.name}</li>;
+              })}
+          </ul>
         </div>
         <div className="submit-trip__tourist-attractions">
-          <h2>selected places</h2>
-          {selectedTouristAttractions &&
-            selectedTouristAttractions.map((selectedTouristAttractions) => {
-              return <h3>{selectedTouristAttractions.name}</h3>;
-            })}
+          <h2 className="place__title">selected places</h2>
+          <ul>
+            {selectedTouristAttractions &&
+              selectedTouristAttractions.map((selectedTouristAttractions) => {
+                return <li>{selectedTouristAttractions.name}</li>;
+              })}
+          </ul>
         </div>
-        <div className="button__wrapper">
+        <div className="submit-trip__button-wrapper">
           <button onClick={submitTheTrip} className="button__add button">
-            Add to my trips
+            Save to my trips
           </button>
           <button onClick={cancelTheTrip} className="button__remove button">
             Choose another destination

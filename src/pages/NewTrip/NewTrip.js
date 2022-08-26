@@ -67,7 +67,6 @@ function NewTrip(props) {
       newCityInformation.restaurants[newSelectedRestaurantId].isSelected =
         !newCityInformation.restaurants[newSelectedRestaurantId].isSelected;
       setCityInformation({ ...newCityInformation });
-      console.log(newCityInformation);
     }
   };
 
@@ -88,11 +87,12 @@ function NewTrip(props) {
     <div className="search">
       {!props.match.params.placeId ? (
         <div className="search__container" onBlur={onBlur}>
-          <h1 className="search__title">Search</h1>
+          <h1 className="search__title">Search your destination</h1>
           <div className="search__inner">
             <input
               className="search__input"
               type="text"
+              placeholder="Enter a city"
               value={input}
               onChange={onChange}
               onFocus={onFocus}
@@ -107,10 +107,11 @@ function NewTrip(props) {
                     to={(location) => ({
                       pathname: `/newtrip/${city.placeId}`,
                     })}
-                    className="search__dropdown-row"
                     key={city.name}
                   >
-                    <div>{city.description}</div>
+                    <div className="search__dropdown-row">
+                      {city.description}
+                    </div>
                   </Link>
                 ))}
             </div>

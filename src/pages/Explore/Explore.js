@@ -1,41 +1,40 @@
-import { SettingsBrightnessSharp } from '@mui/icons-material';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import TripCard from '../../component/TripCard/TripCard';
-import './MyTrips.scss';
-function MyTrips({ user }) {
-  const history = useHistory();
+import ExploreCard from '../../component/ExploreCard/ExploreCard';
+import './Explore.scss';
+
+function Explore() {
   const [trips, setTrips] = useState([]);
+  const [isAdded, setIsAdded] = useState({});
+  const [userData, setUserData] = useState({});
   const token = sessionStorage.getItem('authToken');
-
-  useEffect(() => {
-    if (!user || !user.id) history.push('/signup');
-  }, [user, history]);
-
-  const deleteTripHandle = (event) => {
-    axios
-      .delete(`http://localhost:8080/trips/${event.target.id}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        const newTrips = trips.filter((trip) => trip.id !== event.target.id);
-        setTrips([...newTrips]);
-      });
-  };
-
   useEffect(() => {
     if (token) {
       axios
-        .get('http://localhost:8080/trips', {
+        .get('http://localhost:8080/explore', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => {
           const newTrips = response.data;
           setTrips([...newTrips]);
         });
+    } else {
+      axios.get('http://localhost:8080/explore').then((response) => {
+        const newTrips = response.data;
+        setTrips([...newTrips]);
+      });
     }
   }, []);
+
+  const addTrip = (event) => {
+    let id = event.target.id;
+    let newIsAdded = { ...isAdded };
+    newIsAdded[id] = !isAdded.id;
+    setIsAdded({ ...newIsAdded });
+    let newUserData = trips.filter((trip) => trip.id == id);
+    setUserData({ ...newUserData });
+    axios.post('http://localhost:8080/trips', userData).then((response) => {});
+  };
 
   if (trips.length) {
     return (
@@ -43,7 +42,7 @@ function MyTrips({ user }) {
         <div className="card-holder">
           {trips.map((trip) => {
             return (
-              <TripCard
+              <ExploreCard
                 key={trip.id}
                 cityImage={trip.photo_reference}
                 destination={trip.destination}
@@ -52,9 +51,8 @@ function MyTrips({ user }) {
                 lastEditDate={trip.updated_at}
                 selectedRestaurants={trip.selectedRestaurants}
                 selectedTouristAttractions={trip.selectedTouristAttractions}
-                isOut={true}
-                deleteTripHandle={deleteTripHandle}
-                id={trip.id}
+                submitTheTrip={addTrip}
+                isOut={false}
               />
             );
           })}
@@ -62,15 +60,11 @@ function MyTrips({ user }) {
       </div>
     );
   } else {
-    return (
-      <div className="my-trips">
-        <span className="my-trips__no-trip">No trip to show...</span>
-      </div>
-    );
+    return <div className="my-trips--loading">loading ...</div>;
   }
 }
 
-export default MyTrips;
+export default Explore;
 
 {
   /* <div>{trips.map((trip) => {})}</div> */

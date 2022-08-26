@@ -1,0 +1,116 @@
+.in {
+  justify-self: flex-end;
+  width: 80%;
+  color: white;
+  // width: 90px;
+  padding: 10px 18px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 70px;
+  font-size: 12px;
+  cursor: pointer;
+  align-self: center;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #ffffff;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #49a078 0%,
+    #5bcda3e1 51%,
+    #49a078 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+.out {
+  justify-self: flex-end;
+  width: 80%;
+  color: white;
+  // width: 90px;
+  padding: 10px 18px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 70px;
+  font-size: 12px;
+  cursor: pointer;
+  align-self: center;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  border-radius: 50%;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: #ffffff;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 700;
+  box-shadow: 0px 0px 14px -7px #f09819;
+  background-image: linear-gradient(
+    45deg,
+    #db5461 0%,
+    #ff6070 51%,
+    #db5461 100%
+  );
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
+  &__info {
+    font-size: 1.2rem;
+  }
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+}
+
+.date__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}

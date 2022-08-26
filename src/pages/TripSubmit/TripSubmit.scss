@@ -1,11 +1,6 @@
-.side-bar {
+.submit-trip {
   //   color: rgb(0, 255, 187);
-  z-index: 1;
-  color: #467599;
-  width: 25vw;
-
-  background-color: #91eae4;
-  min-height: calc(100vh - 1rem);
+  min-height: 90vh;
 
   &__form {
     display: flex;
@@ -16,17 +11,22 @@
   &__label {
     text-transform: capitalize;
     margin-left: 2rem;
+    margin-right: 1rem;
+  }
+  &__date-container {
+    display: flex;
+    align-items: center;
   }
   &__date {
     border: solid #005d7a 0.083rem;
     height: 2rem;
-    width: 90%;
+    width: 220px;
     border-radius: 0.3rem;
     color: #467599;
     background-color: rgb(255, 254, 240);
     text-align: center;
-    margin-bottom: 1rem;
-    margin-inline: auto;
+
+    margin-right: 2rem;
   }
   &__input {
     border: solid #005d7a 0.083rem;
@@ -56,6 +56,27 @@
     border-radius: 0.3rem;
     background-color: #9ed8db;
     margin-bottom: 1rem;
+  }
+  &__restaurants {
+    margin-left: 2.25rem;
+  }
+  &__tourist-attractions {
+    margin-left: 2.25rem;
+  }
+  &__wrapper {
+    background-color: rgba(255, 255, 255, 0.58);
+    display: flex;
+    flex-direction: column;
+    margin: 5rem;
+    max-width: 700px;
+    margin-inline: auto;
+    min-height: 100vh;
+  }
+  &__button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    flex: 1;
   }
 }
 
@@ -113,23 +134,7 @@
     background-color: #005d7a;
   }
 }
-.submit-trip {
-  min-height: 90vh;
-  &__restaurants {
-    margin-left: 2.25rem;
-  }
-  &__tourist-attractions {
-    margin-left: 2.25rem;
-  }
-  &__wrapper {
-    background-color: rgba($color: #c5c5c5, $alpha: 0.8);
-    display: flex;
-    flex-direction: column;
-    margin: 5rem;
-    max-width: 700px;
-    margin-inline: auto;
-  }
-}
+
 .button {
   background-color: #3edd84;
   color: white;
@@ -147,4 +152,10 @@
   align-self: center;
   margin: 0;
   width: 100%;
+}
+.destination__title {
+  margin-left: 2rem;
+}
+.place__title {
+  text-transform: capitalize;
 }

@@ -3,7 +3,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   margin-left: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 .my-trips {
   min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  &__no-trip {
+    margin: auto;
+  }
 }

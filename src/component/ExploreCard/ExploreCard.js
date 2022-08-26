@@ -1,5 +1,5 @@
-import './TripCard.scss';
-function TripCard({
+import './ExploreCard.scss';
+function ExploreCard({
   destination,
   start,
   end,
@@ -7,9 +7,6 @@ function TripCard({
   cityImage,
   selectedRestaurants,
   selectedTouristAttractions,
-  isOut,
-  deleteTripHandle,
-  id,
 }) {
   let now = new Date().getTime();
 
@@ -61,24 +58,10 @@ function TripCard({
           <div className="user__info">
             <small>Last Edit: {dateFormatter(lastEditDate)}</small>
           </div>
-          {!isOut ? (
-            <button to="/newtrip" className=" in">
-              I'm In
-            </button>
-          ) : (
-            <button
-              id={id}
-              to="/newtrip"
-              className=" out"
-              onClick={deleteTripHandle}
-            >
-              I'm Out
-            </button>
-          )}
         </div>
       </div>
     </div>
   );
 }
 
-export default TripCard;
+export default ExploreCard;

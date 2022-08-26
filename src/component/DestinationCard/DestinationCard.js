@@ -16,10 +16,10 @@ function DestinationCard(
   props
 ) {
   return (
-    <div class="destination__container">
-      <div class="square">
-        <img src={destinationPhoto} class="mask" />
-        <div class="h1">{placeName}</div>
+    <div className="destination__container">
+      <div className="square">
+        <img src={destinationPhoto} className="mask" />
+        <div className="h1">{placeName}</div>
         <div className="destination__rating">
           <BasicRating value={placeRating} number={placeNumberOfRatings} />
         </div>

@@ -7,67 +7,66 @@ import './Footer.scss';
 function Footer() {
   return (
     <div className="footer">
-      <div className="footer-clean">
-        <footer>
-          <div className="container">
-            <div className=" item">
-              <h3>Services</h3>
-              <ul>
-                <li>
-                  <a href="#">Web design</a>
-                </li>
-                <li>
-                  <a href="#">Development</a>
-                </li>
-                <li>
-                  <a href="#">Hosting</a>
-                </li>
-              </ul>
-            </div>
-            <div className=" item">
-              <h3>About</h3>
-              <ul>
-                <li>
-                  <a href="#">Company</a>
-                </li>
-                <li>
-                  <a href="#">Team</a>
-                </li>
-                <li>
-                  <a href="#">Legacy</a>
-                </li>
-              </ul>
-            </div>
-            <div className=" item">
-              <h3>Careers</h3>
-              <ul>
-                <li>
-                  <a href="#">Job openings</a>
-                </li>
-                <li>
-                  <a href="#">Employee success</a>
-                </li>
-                <li>
-                  <a href="#">Benefits</a>
-                </li>
-              </ul>
-            </div>
-            <div className="item social">
-              <a href="#">
-                <img src={FacebookIcon} className="icon"></img>
-              </a>
-              <a href="#">
-                <img src={TwitterIcon} className="icon "></img>
-              </a>
+      <footer className="footer__body">
+        <div className=" item">
+          <h3 className="footer__sub-header">Services</h3>
+          <ul className="footer__ul">
+            <li>
+              <a href="#">Web design</a>
+            </li>
+            <li>
+              <a href="#">Development</a>
+            </li>
+            <li>
+              <a href="#">Hosting</a>
+            </li>
+          </ul>
+        </div>
+        <div className=" item">
+          <h3 className="footer__sub-header">About</h3>
+          <ul className="footer__ul">
+            <li>
+              <a href="#">Company</a>
+            </li>
+            <li>
+              <a href="#">Team</a>
+            </li>
+            <li>
+              <a href="#">Legacy</a>
+            </li>
+          </ul>
+        </div>
+        <div className=" item">
+          <h3 className="footer__sub-header">Careers</h3>
+          <ul className="footer__ul">
+            <li>
+              <a href="#">Job openings</a>
+            </li>
+            <li>
+              <a href="#">Employee success</a>
+            </li>
+            <li>
+              <a href="#">Benefits</a>
+            </li>
+          </ul>
+        </div>
+        <div className="item social">
+          <a href="#" className="footer__icon">
+            <img src={FacebookIcon}></img>
+          </a>
+          <a href="#" className="footer__icon ">
+            <img src={TwitterIcon}></img>
+          </a>
 
-              <a href="#">
-                <img src={InstagramIcon} className="icon "></img>
-              </a>
-              <p className="copyright">Im in © 2022</p>
-            </div>
-          </div>
-        </footer>
-      </div>
+          <a
+            href="https://www.instagram.com/bina_basiri/"
+            className="footer__icon "
+          >
+            <img src={InstagramIcon}></img>
+          </a>
+          <p className="footer__copyright">Im in © 2022</p>
+        </div>
+      </footer>
     </div>
   );
 }

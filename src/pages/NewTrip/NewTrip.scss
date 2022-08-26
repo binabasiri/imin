@@ -13,22 +13,23 @@
     margin-left: 4rem;
   }
   &__input {
-    width: 35vw;
+    width: 40vw;
     height: 2rem;
     font-size: 1.25rem;
     margin-left: 4rem;
   }
   &__dropdown {
-    background-color: #6d988458;
-    // #91eae4, #86a8e7, #7f7fd5
-    width: 35vw;
+    background-color: #ffffffd6;
+
+    width: 40vw;
     margin-left: 4rem;
   }
   &__dropdown-row {
-    z-index: 100;
+    padding: 0.5rem;
     &:hover {
-      color: white;
-      background: aqua;
+      // color: #6f6fbd;
+      font-weight: 400;
+      background: rgba(102, 255, 255, 0.871);
     }
   }
 }
@@ -47,6 +48,7 @@
 }
 .image__card {
   width: 80%;
+  border-radius: 5rem;
 }
 .destination__container {
   display: flex;
@@ -88,7 +90,7 @@
 
 .h1 {
   text-align: left;
-  margin-top: 200px;
+  margin-top: 280px;
   font-size: 1.2rem;
   font-weight: 600;
   margin-left: 0.7rem;
@@ -120,6 +122,9 @@ p {
   align-self: center;
   margin: 0;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .new-trip__places {
   background-color: rgba(255, 255, 255, 0.58);

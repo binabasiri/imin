@@ -1,11 +1,13 @@
-import React from 'react';
+import { useEffect } from 'react';
 import './Home.scss';
-
 import BahamasPic from '../../asset/bahamas.webp';
 import RomePic from '../../asset/rome.jpeg';
 import Activity from '../../asset/activity.jpeg';
+import axios from 'axios';
 
-function Main() {
+const token = sessionStorage.getItem('authToken');
+
+function Home() {
   return (
     <div className="main">
       <div className="card">
@@ -22,11 +24,7 @@ function Main() {
           </p>
         </div>
         <div className="card__footer">
-          <div className="user">
-            <div className="user__info">
-              <small>Updated yesterday</small>
-            </div>
-          </div>
+          <small className="card__date">Updated yesterday</small>
         </div>
       </div>
       <div className="card">
@@ -43,11 +41,7 @@ function Main() {
           </p>
         </div>
         <div className="card__footer">
-          <div className="user">
-            <div className="user__info">
-              <small>Updated 5 day ago</small>
-            </div>
-          </div>
+          <small className="card__date">Updated 5 day ago</small>
         </div>
       </div>
       <div className="card">
@@ -68,15 +62,11 @@ function Main() {
           </p>
         </div>
         <div className="card__footer">
-          <div className="user">
-            <div className="user__info">
-              <small>Updated 2 day ago</small>
-            </div>
-          </div>
+          <small className="card__date">Updated 2 day ago</small>
         </div>
       </div>
     </div>
   );
 }
 
-export default Main;
+export default Home;
