@@ -1,8 +1,6 @@
 import React from 'react';
 import BasicRating from '../BasicRating/BasicRating';
 import './DestinationCard.scss';
-import SelectIcon from '../../asset/select.png';
-import SelectedIcon from '../../asset/select1.png';
 function DestinationCard(
   {
     destinationPhoto,
@@ -18,7 +16,7 @@ function DestinationCard(
   return (
     <div className="destination__container">
       <div className="square">
-        <img src={destinationPhoto} className="mask" />
+        <img src={destinationPhoto} className="mask" alt={placeName} />
         <div className="h1">{placeName}</div>
         <div className="destination__rating">
           <BasicRating value={placeRating} number={placeNumberOfRatings} />

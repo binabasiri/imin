@@ -11,8 +11,6 @@ function TripCard({
   deleteTripHandle,
   id,
 }) {
-  let now = new Date().getTime();
-
   const dateFormatter = (epochTime) => {
     // epochTime.getDate();
     const stringDate = new Date(epochTime);
@@ -23,13 +21,12 @@ function TripCard({
     return `${day}/${month}/${year}`;
   };
 
-  const changeHandle = (event) => {};
   return (
     <div className="card">
       <div className="card__header">
         <img
           src={`http://localhost:8080/photo/${cityImage}`}
-          alt="card__image"
+          alt="card"
           className="card__image"
         />
       </div>

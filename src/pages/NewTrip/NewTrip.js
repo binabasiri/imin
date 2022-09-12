@@ -1,10 +1,9 @@
 import React from 'react';
 
 import axios from 'axios';
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NewTrip.scss';
-import BasicRating from '../../component/BasicRating/BasicRating';
 
 import DestinationCard from '../../component/DestinationCard/DestinationCard';
 
@@ -12,16 +11,13 @@ function NewTrip(props) {
   const [input, setInput] = useState('');
   const [prediction, setPrediction] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [selectedCity, setSelectedCity] = useState('');
   const [cityInformation, setCityInformation] = useState({});
-  const [selectedRestaurants, setSelectedRestaurant] = useState({});
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [props.match.params.placeId]);
 
   useEffect(() => {
-    setSelectedCity(props.match.params.placeId);
     if (props.match.params.placeId) {
       axios
         .get(`http://localhost:8080/city/${props.match.params.placeId}`)
@@ -54,7 +50,8 @@ function NewTrip(props) {
         .get(`http://localhost:8080/search/${event.target.value}`)
         .then((suggestions) => {
           setPrediction(suggestions.data);
-        });
+        })
+        .catch((error) => console.log(error));
     } else {
       setPrediction([]);
     }
@@ -124,6 +121,7 @@ function NewTrip(props) {
         <div className="card__container">
           <div className="image__card">
             <img
+              alt="city"
               className="search__hero"
               src={`http://localhost:8080/photo/${
                 findWidestPhoto(cityInformation).photo_reference

@@ -17,21 +17,25 @@ function Explore() {
         .then((response) => {
           const newTrips = response.data;
           setTrips([...newTrips]);
-        });
+        })
+        .catch((error) => console.log(error));
     } else {
-      axios.get('http://localhost:8080/explore').then((response) => {
-        const newTrips = response.data;
-        setTrips([...newTrips]);
-      });
+      axios
+        .get('http://localhost:8080/explore')
+        .then((response) => {
+          const newTrips = response.data;
+          setTrips([...newTrips]);
+        })
+        .catch((error) => console.log(error));
     }
-  }, []);
+  }, [token]);
 
   const addTrip = (event) => {
     let id = event.target.id;
     let newIsAdded = { ...isAdded };
     newIsAdded[id] = !isAdded.id;
     setIsAdded({ ...newIsAdded });
-    let newUserData = trips.filter((trip) => trip.id == id);
+    let newUserData = trips.filter((trip) => trip.id === id);
     setUserData({ ...newUserData });
     axios.post('http://localhost:8080/trips', userData).then((response) => {});
   };
@@ -65,7 +69,3 @@ function Explore() {
 }
 
 export default Explore;
-
-{
-  /* <div>{trips.map((trip) => {})}</div> */
-}

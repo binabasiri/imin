@@ -1,18 +1,14 @@
-import { useEffect } from 'react';
 import './Home.scss';
 import BahamasPic from '../../asset/bahamas.webp';
 import RomePic from '../../asset/rome.jpeg';
 import Activity from '../../asset/activity.jpeg';
-import axios from 'axios';
-
-const token = sessionStorage.getItem('authToken');
 
 function Home() {
   return (
     <div className="main">
       <div className="card">
         <div className="card__header">
-          <img src={BahamasPic} alt="card__image" className="card__image" />
+          <img src={BahamasPic} alt="card" className="card__image" />
         </div>
         <div className="card__body">
           <span className="tag tag-blue">Weather Forecast</span>
@@ -29,7 +25,7 @@ function Home() {
       </div>
       <div className="card">
         <div className="card__header">
-          <img src={RomePic} alt="card__image" className="card__image" />
+          <img src={RomePic} alt="card" className="card__image" />
         </div>
         <div className="card__body">
           <span className="tag tag-brown">Hot Places</span>
